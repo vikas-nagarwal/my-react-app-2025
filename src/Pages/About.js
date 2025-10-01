@@ -9,6 +9,7 @@ export const About = () => {
       <Api /> {/* Capitalized */}
       <H2>FDFDF</H2>
       <H2>FDFDF</H2>
+      <H2>FDFDF</H2>
     </div>
   );
 };
