@@ -10,12 +10,12 @@ function Login() {
         {/* Left Side: Form */}
         <div className="col-12 col-md-6 col-lg-5">
           <div className="card p-4 shadow">
-            <h2 className="mb-4 text-center">Signss up</h2>
+            <h2 className="mb-4 text-center ff">Sign up</h2>
             <form>
               <div className="mb-3">
                 <div className="input-group">
                   <span className="input-group-text">
-                    <i className="bi bi-arrow-down"></i>
+                    <i class="bi bi-person"></i>
                   </span>
                   <input
                     type="text"
@@ -26,19 +26,31 @@ function Login() {
               </div>
 
               <div className="mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Last Name"
-                />
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <i class="bi bi-person"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Last Name"
+                  />
+                </div>
               </div>
+
               <div className="mb-3">
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Email"
-                />
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <i className="bi bi-telephone"></i>
+                  </span>
+                  <input
+                    type="tel"
+                    className="form-control"
+                    placeholder="Phone Number"
+                  />
+                </div>
               </div>
+
               <div className="mb-3">
                 <div className="input-group">
                   <span className="input-group-text">
@@ -48,6 +60,18 @@ function Login() {
                     type="password"
                     className="form-control"
                     placeholder="Password"
+                  />
+                </div>
+              </div>
+              <div className="mb-3">
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <i class="bi bi-envelope"></i>{" "}
+                  </span>
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
                   />
                 </div>
               </div>
