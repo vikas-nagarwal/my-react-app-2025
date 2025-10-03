@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Login from "../Pages/Login";
+import Login from "../Pages/Signup";
 
 function Header() {
   return (
@@ -12,6 +12,9 @@ function Header() {
         <li>Blog</li>
         <li>
           <Link to="/Login">Login</Link>
+        </li>{" "}
+        <li>
+          <Link to="/Signup">Signup</Link>
         </li>{" "}
       </ul>
     </div>
