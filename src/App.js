@@ -3,20 +3,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Service from "./Pages/Service";
-import Navbar from "./Componets/Navbar";
-import Footer from "./Componets/Footer"; // ✅ match exact filename
+import Footer from "./Components/Footer.js";
+import Header from "./Components/Header.js";
+import Login from "./Pages/Login.js";
 
 function App() {
   return (
     <BrowserRouter>
       {/* Navbar at top */}
-      <Navbar />
+      <Header />
 
       {/* Page Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
       <Footer />
     </BrowserRouter>
