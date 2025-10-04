@@ -51,7 +51,7 @@ function Login() {
                   width="20"
                   height="20"
                 />
-                Login with <b>Facebook</b>
+                Login with <b>Google</b>
               </button>
 
               {/* Facebook Button */}
@@ -67,12 +67,12 @@ function Login() {
         </div>
 
         {/* Right Side: Image */}
-        <div className="col-12 col-md-6 col-lg-5 d-none d-md-block">
+        <div className="col-12 col-md-6 col-lg-5 d-none d-md-block login">
           <div className="text-center">
             <img
-              src="../image/login.jpeg"
+              src={loginImage}
               alt="Shopping"
-              className="img-fluid rounded"
+              className="img-fluid rounded login"
             />
           </div>
         </div>
