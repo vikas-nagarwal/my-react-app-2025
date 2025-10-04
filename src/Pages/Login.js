@@ -1,5 +1,5 @@
 import React from "react";
-
+import loginImage from "../image/login.jpeg";
 function Login() {
   return (
     <div className="container mt-5">
@@ -70,7 +70,7 @@ function Login() {
         <div className="col-12 col-md-6 col-lg-5 d-none d-md-block">
           <div className="text-center">
             <img
-              src="/login-image.png" // replace with your image path
+              src="../image/login.jpeg"
               alt="Shopping"
               className="img-fluid rounded"
             />
