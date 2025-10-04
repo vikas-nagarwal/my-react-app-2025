@@ -2,6 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../App.css";
+import signupImage from "../image/singup.jpg";
+import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 
 function Signup() {
   return (
@@ -87,12 +89,13 @@ function Signup() {
         </div>
 
         {/* Right Side: Image */}
-        <div className="col-12 col-md-6 col-lg-5 d-none d-md-block">
+        <div className="col-12 col-md-6 col-lg-5 d-none d-md-block signupd">
           <div className="text-center">
             <img
-              src="/login-image.png" // replace with your image path
+              src={signupImage}
               alt="Shopping"
               className="img-fluid rounded"
+              style={{ height: "400px" }}
             />
           </div>
         </div>
