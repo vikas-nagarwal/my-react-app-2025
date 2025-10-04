@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../App.css";
 import signupImage from "../image/singup.jpg";
-import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 
 function Signup() {
   return (
