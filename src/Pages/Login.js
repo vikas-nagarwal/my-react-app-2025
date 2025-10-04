@@ -67,7 +67,7 @@ function Login() {
         </div>
 
         {/* Right Side: Image */}
-        <div className="col-12 col-md-6 col-lg-5 d-none d-md-block login">
+        <div className="col-12 col-md-6 col-lg-5 login">
           <div className="text-center">
             <img
               src={loginImage}
