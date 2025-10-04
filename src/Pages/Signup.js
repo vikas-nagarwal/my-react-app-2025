@@ -89,7 +89,7 @@ function Signup() {
         </div>
 
         {/* Right Side: Image */}
-        <div className="col-12 col-md-6 col-lg-5 d-none d-md-block signupd">
+        <div className="col-12 col-md-6 col-lg-5">
           <div className="text-center">
             <img
               src={signupImage}
