@@ -43,6 +43,26 @@ function Login() {
               <a href="/login">Login In</a>
               with other{" "}
             </p>
+            <div class="login-container">
+              <button className="login-btn">
+                <img
+                  src="https://www.gstatic.com/images/branding/product/1x/gsa_64dp.png"
+                  alt="Google logo"
+                  width="20"
+                  height="20"
+                />
+                Login with <b>Facebook</b>
+              </button>
+
+              {/* Facebook Button */}
+              <button className="login-btn">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                  alt="Facebook logo"
+                />
+                Login with <b>Facebook</b>
+              </button>
+            </div>
           </div>
         </div>
 
