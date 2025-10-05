@@ -1,7 +1,48 @@
-import "../App.css";
+import React from "react";
 
-export const Home = () => {
-  return <div>Home</div>;
+// Car class
+class Car {
+  constructor(name) {
+    this.brand = name;
+  }
+
+  present() {
+    return "I have a " + this.brand;
+  }
+}
+
+
+
+
+// Rahul class
+class Rahul {
+  constructor(name, age, id, roll) {
+    this.name = name;
+    this.age = age;
+    this.id = id;
+    this.roll = roll;
+  }
+}
+
+// Home component
+const Home = () => {
+  const myCar = new Car("BMW");       // Car object
+  const obj = new Rahul("Rahul", 28, 101, 12); // Rahul object
+
+  return (
+    <div>
+      <div>
+        <h2>{myCar.present()}</h2>
+      </div>
+  
+      <div>
+        <h1>{obj.name}</h1>
+        <h2>{obj.age}</h2>
+        <h3>{obj.id}</h3>
+        <h4>{obj.roll}</h4>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
