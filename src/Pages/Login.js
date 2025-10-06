@@ -1,17 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import loginImage from "../image/login.jpeg";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Login() {
+  // 🧾 Step 1: Form data state
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // ✅ Step 2: Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // ✅ Step 3: Validation function
+  const validate = () => {
+    let newErrors = {};
+
+    // Username validation
+    if (!formData.username.trim()) {
+      newErrors.username = "Username is required";
+    }
+
+    // Password validation
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters long";
+    }
+
+    return newErrors;
+  };
+
+  // ✅ Step 4: Handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validate();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      alert("✅ Login successful!");
+      console.log("Form Data:", formData);
+    }
+  };
+
+  // ✅ Step 5: Google Login Handlers
   const handleLoginSuccess = (credentialResponse) => {
     console.log("Google Login Success:", credentialResponse);
-    // Send credentialResponse.credential to backend for verification
   };
 
   const handleLoginError = () => {
     console.log("Google Login Failed");
   };
 
+  // ✅ UI
   return (
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
       <div className="container mt-5">
@@ -21,60 +68,54 @@ function Login() {
             <div className="card p-4 shadow">
               <h2 className="mb-4 text-center ff">Log in</h2>
 
-              <form>
+              <form onSubmit={handleSubmit}>
+                {/* Username */}
                 <div className="mb-3 input-group">
                   <span className="input-group-text">
                     <i className="bi bi-person"></i>
                   </span>
                   <input
                     type="text"
+                    name="username"
                     className="form-control"
                     placeholder="Username"
+                    value={formData.username}
+                    onChange={handleChange}
                   />
                 </div>
+                {errors.username && (
+                  <small className="text-danger">{errors.username}</small>
+                )}
 
-                <div className="mb-3 input-group">
+                {/* Password */}
+                <div className="mb-3 input-group mt-2">
                   <span className="input-group-text">
                     <i className="bi bi-lock"></i>
                   </span>
                   <input
                     type="password"
+                    name="password"
                     className="form-control"
                     placeholder="Password"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                 </div>
+                {errors.password && (
+                  <small className="text-danger">{errors.password}</small>
+                )}
 
-                <button type="submit" className="btn color w-100">
+                <button type="submit" className="btn color w-100 mt-3">
                   Log in
                 </button>
               </form>
 
               <p className="text-center mt-3">Or login with other accounts</p>
 
+              {/* Google Login */}
               <GoogleLogin
                 onSuccess={handleLoginSuccess}
                 onError={handleLoginError}
-                render={(renderProps) => (
-                  <button
-                    className="btn btn-light w-100 d-flex align-items-center justify-content-center"
-                    onClick={renderProps.onClick}
-                    disabled={renderProps.disabled}
-                    style={{
-                      border: "1px solid #ddd",
-                      padding: "8px 12px",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                      alt="Google logo"
-                      width="18"
-                      height="18"
-                      className="me-2"
-                    />
-                    Sign in with Google
-                  </button>
-                )}
               />
 
               {/* Facebook Login */}
@@ -83,7 +124,7 @@ function Login() {
                   "https://yourwebsite.com/auth/facebook/callback"
                 )}&state={st=state123abc,ds=123456789}`}
               >
-                <button className="login-btn mt-3">
+                <button className="login-btn mt-3 w-100 btn btn-light">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
                     alt="Facebook logo"
