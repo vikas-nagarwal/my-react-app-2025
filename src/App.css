@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Alan+Sans:300,regular,500,600,700,800,900);
+body{
 
+  background-color: #cccccc;
+}
 .App {
   text-align: center;
 }

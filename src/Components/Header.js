@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Login from "../Pages/Signup";
 
 function Header() {
   return (
     <div>
       <ul className="headersec">
-        <li>Home</li>
+      <li>
+  <Link to="/home">Home</Link>
+</li>
         <li>About</li>
         <li>Service</li>
         <li>Blog</li>
