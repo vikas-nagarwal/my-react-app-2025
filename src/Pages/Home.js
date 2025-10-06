@@ -1,4 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
+
+class MyComponent extends Component {
+  render() {
+    return <h1>Hello from Component</h1>;
+  }
+}
 
 // Car class
 class Car {
@@ -28,8 +34,6 @@ class vikas {
     this.idnumber = idnumber;
   }
 }
-
-
 
 // Home component
 const Home = () => {
