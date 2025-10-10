@@ -5,8 +5,9 @@ import About from "./Pages/About";
 import Service from "./Pages/Service";
 import Footer from "./Components/Footer.js";
 import Header from "./Components/Header.js";
-import Signup from "./Pages/Signup.js";
 import Login from "./Pages/Login.js";
+import Render from "./Pages/Render"; // yeh aapka class component hai
+import Signup from "./Pages/Signup";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
+        <Route path="/Render" element={<Render />} />
       </Routes>
       <Footer />
     </BrowserRouter>

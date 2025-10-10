@@ -60,7 +60,7 @@ function Login() {
 
   // ✅ UI
   return (
-    <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+    <GoogleOAuthProvider clientId="731940648115-6jhi4mlq2v3s8tfairu54g88vf69avl5.apps.googleusercontent.com">
       <div className="container mt-5">
         <div className="row justify-content-center align-items-center min-vh-100">
           {/* Left Side: Form */}
