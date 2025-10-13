@@ -113,38 +113,40 @@ class MyComponent extends Component {
         </div>
 
         {/* Product Slider */}
-        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-          <Slider {...settings}>
-            {products.map((product, index) => (
-              <div key={index}>
-                <div
-                  style={{
-                    backgroundColor: "#7B4F3B",
-                    color: "#fff",
-                    padding: "20px",
-                    borderRadius: "10px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <h2 style={{ margin: 0 }}>{product.title}</h2>
-                    <p>{product.discount}</p>
-                  </div>
-                  <img
-                    src={product.image}
-                    alt={product.title}
+        <div className="container">
+          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+            <Slider {...settings}>
+              {products.map((product, index) => (
+                <div key={index}>
+                  <div
                     style={{
-                      width: "120px",
-                      height: "120px",
-                      objectFit: "cover",
+                      backgroundColor: "#7B4F3B",
+                      color: "#fff",
+                      padding: "20px",
+                      borderRadius: "10px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
                     }}
-                  />
+                  >
+                    <div>
+                      <h2 style={{ margin: 0 }}>{product.title}</h2>
+                      <p>{product.discount}</p>
+                    </div>
+                    <img
+                      src="https://tse2.mm.bing.net/th/id/OIP.9Izv-aszItToTtEqRMSE0QHaE6?pid=Api&P=0&h=180"
+                      alt={product.title}
+                      style={{
+                        width: "120px",
+                        height: "120px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
       </>
     );
