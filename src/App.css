@@ -85,3 +85,16 @@ input {
 .signupd img-fluid {
   height: 500px;
 }
+.bgcolor {
+  background-color: #ffffff;
+}
+
+button.btn.btn-dark.bggcolor {
+  background-color: #6d3c2c;
+}
+.headcls {
+  background-color: #6d3c2c;
+}
+ul li {
+  color: white;
+}

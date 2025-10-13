@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 class MyComponent extends Component {
   render() {
     return (
       <>
-        <div className="container py-2">
+        <div className="container py-2 bgcolor ">
           <div className="row align-items-center">
             {/* Left Column */}
             <div className="col-12 col-md-6 mb-2 mb-md-0">
@@ -34,7 +35,7 @@ class MyComponent extends Component {
           </div>
         </div>
 
-        <header className="bg-white py-2 shadow-sm">
+        <header className="bg-white py-2 shadow-sm bgcolor">
           <div className="container">
             <div className="row align-items-center">
               {/* Logo */}
@@ -50,7 +51,7 @@ class MyComponent extends Component {
                     className="form-control"
                     placeholder="Search essentials, groceries and more..."
                   />
-                  <button className="btn btn-dark" type="button">
+                  <button className="btn btn-dark bggcolor" type="button">
                     <i className="bi bi-search"></i>
                   </button>
                 </div>
@@ -71,65 +72,24 @@ class MyComponent extends Component {
             </div>
           </div>
         </header>
+
+        <div className="headcls ">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <ul className="d-flex justify-content-between align-items-center list-unstyled mb-0 py-2 me-4">
+                  <li>Home</li>
+                  <li>Shop</li>
+                  <li>About</li>
+                  <li>Contact</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </>
     );
-
-    <div></div>;
   }
 }
-
-// // Car class
-// class Car {
-//   constructor(name) {
-//     this.brand = name;
-//   }
-//   present() {
-//     return "I have a " + this.brand;
-//   }
-// }
-// // Rahul class
-// class Rahul {
-//   constructor(name, age, id, roll) {
-//     this.name = name;
-//     this.age = age;
-//     this.id = id;
-//     this.roll = roll;
-//   }
-// }
-
-// class vikas {
-//   constructor(name, age, idnumber) {
-//     this.name = name;
-//     this.age = age;
-//     this.idnumber = idnumber;
-//   }
-// }
-
-// // Home component
-// const Home = () => {
-//   const myCar = new Car("BMW"); // Car object
-//   const obj = new Rahul("Rahul", 28, 101, 12); // Rahul object
-//   const ob4 = new vikas("vikas", 20, 25);
-
-//   return (
-//     <div>
-//       <div>
-//         <h2>{ob4.name}</h2>
-//         <h2>{ob4.age}</h2>
-//         <h2>{ob4.idnumber}</h2>
-//       </div>
-//       <div>
-//         <h2>{myCar.present()}</h2>
-//       </div>
-
-//       <div>
-//         <h1>{obj.name}</h1>
-//         <h2>{obj.age}</h2>
-//         <h3>{obj.id}</h3>
-//         <h4>{obj.roll}</h4>
-//       </div>
-//     </div>
-//   );
-// };
 
 export default MyComponent;
