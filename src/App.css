@@ -97,4 +97,5 @@ button.btn.btn-dark.bggcolor {
 }
 ul li {
   color: white;
+  list-style: none; /* Removes bullets */
 }

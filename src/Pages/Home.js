@@ -1,12 +1,36 @@
 import React, { Component } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Slider from "react-slick";
 
 class MyComponent extends Component {
   render() {
+    // Slider settings
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+    };
+
+    // Products array
+    const products = [
+      {
+        title: "AGARWOOD",
+        discount: "UP to 80% OFF",
+      },
+      {
+        title: "SANDALWOOD",
+        discount: "UP to 50% OFF",
+      },
+      // Add more products as needed
+    ];
+
     return (
       <>
-        <div className="container py-2 bgcolor ">
+        <div className="container py-2 bgcolor">
           <div className="row align-items-center">
             {/* Left Column */}
             <div className="col-12 col-md-6 mb-2 mb-md-0">
@@ -73,11 +97,11 @@ class MyComponent extends Component {
           </div>
         </header>
 
-        <div className="headcls ">
+        <div className="headcls">
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <ul className="d-flex justify-content-between align-items-center list-unstyled mb-0 py-2 me-4">
+                <ul className="d-flex justify-content-evenly mt-2 text-decoration-none uls">
                   <li>Home</li>
                   <li>Shop</li>
                   <li>About</li>
@@ -86,6 +110,41 @@ class MyComponent extends Component {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Product Slider */}
+        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+          <Slider {...settings}>
+            {products.map((product, index) => (
+              <div key={index}>
+                <div
+                  style={{
+                    backgroundColor: "#7B4F3B",
+                    color: "#fff",
+                    padding: "20px",
+                    borderRadius: "10px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <div>
+                    <h2 style={{ margin: 0 }}>{product.title}</h2>
+                    <p>{product.discount}</p>
+                  </div>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    style={{
+                      width: "120px",
+                      height: "120px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </>
     );
