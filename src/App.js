@@ -6,23 +6,22 @@ import Service from "./Pages/Service";
 import Footer from "./Components/Footer.js";
 import Header from "./Components/Header.js";
 import Login from "./Pages/Login.js";
-import Render from "./Pages/Render"; // yeh aapka class component hai
 import Signup from "./Pages/Signup";
+import { User, Data } from "./Pages/Render";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* Navbar at top */}
       <Header />
-
-      {/* Page Routes */}
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/Render" element={<Render />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/data" element={<Data />} />
       </Routes>
       <Footer />
     </BrowserRouter>
