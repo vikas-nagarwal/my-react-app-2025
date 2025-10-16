@@ -99,3 +99,57 @@ ul li {
   color: white;
   list-style: none; /* Removes bullets */
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 25px;
+}
+.action-btn {
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #b78875;
+  border-radius: 8px;
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #5c2e22;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+}
+.action-btn:hover {
+  background-color: #fdf2ef;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.action-btn i {
+  font-size: 18px;
+  color: #b78875;
+}
+.action-btn {
+  border-radius: 5px;
+  border-color: #61dafb;
+}
+@keyframes action-btn {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.col-5-custom {
+  flex: 1 1 18%; /* make each item flexible */
+  max-width: 18%; /* control max width */
+  text-align: center;
+  background-color: white;
+}
+
+.row-custom {
+  display: flex;
+  justify-content: space-between; /* equal spacing between items */
+  flex-wrap: wrap; /* wraps to next line if needed */
+  padding: 10px 0;
+}
+
+.row-custom {
+  padding: 47px;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Slider from "react-slick";
+import icon from "../image/icon.png";
 
 class MyComponent extends Component {
   render() {
@@ -15,41 +15,32 @@ class MyComponent extends Component {
       arrows: true,
     };
 
-    // Products array
+    // Products array (for product section)
     const products = [
-      {
-        title: "AGARWOOD",
-        discount: "UP to 80% OFF",
-      },
-      {
-        title: "SANDALWOOD",
-        discount: "UP to 50% OFF",
-      },
-      // Add more products as needed
+      { name: "AGARWOOD", discount: "Up to 80% OFF", icon },
+      { name: "SANDALWOOD", discount: "Up to 70% OFF", icon },
+      { name: "JASMINE", discount: "Up to 60% OFF", icon },
+      { name: "ROSE", discount: "Up to 50% OFF", icon },
+      { name: "LAVENDER", discount: "Up to 40% OFF", icon },
     ];
 
     return (
       <>
         <div className="container py-2 bgcolor">
           <div className="row align-items-center">
-            {/* Left Column */}
             <div className="col-12 col-md-6 mb-2 mb-md-0">
               <h6 className="text-start">Welcome to Our E-Commerce Store</h6>
             </div>
-
-            {/* Right Column */}
             <div className="col-12 col-md-6">
               <div className="d-flex flex-column flex-md-row justify-content-md-end align-items-start align-items-md-center gap-2 gap-md-3">
                 <div className="d-flex align-items-center gap-1">
                   <i className="bi bi-cart"></i>
                   <h6 className="mb-0">Deliver to 423651</h6>
                 </div>
-
                 <div className="d-flex align-items-center gap-1">
                   <i className="bi bi-truck"></i>
                   <h6 className="mb-0">Track your order</h6>
                 </div>
-
                 <div className="d-flex align-items-center gap-1">
                   <i className="bi bi-tags"></i>
                   <h6 className="mb-0">All Offers</h6>
@@ -58,44 +49,6 @@ class MyComponent extends Component {
             </div>
           </div>
         </div>
-
-        <header className="bg-white py-2 shadow-sm bgcolor">
-          <div className="container">
-            <div className="row align-items-center">
-              {/* Logo */}
-              <div className="col-6 col-md-2">
-                <h4 className="mb-0 text-danger">Logo</h4>
-              </div>
-
-              {/* Search Bar */}
-              <div className="col-6 col-md-7">
-                <div className="input-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search essentials, groceries and more..."
-                  />
-                  <button className="btn btn-dark bggcolor" type="button">
-                    <i className="bi bi-search"></i>
-                  </button>
-                </div>
-              </div>
-
-              {/* User / Cart */}
-              <div className="col-12 col-md-3 mt-2 mt-md-0">
-                <div className="d-flex justify-content-end align-items-center gap-3">
-                  <button className="btn btn-outline-secondary btn-sm">
-                    Sign Up / Sign In
-                  </button>
-                  <div className="d-flex align-items-center gap-1">
-                    <i className="bi bi-cart fs-5"></i>
-                    <span>Cart</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
 
         <div className="headcls">
           <div className="container">
@@ -112,40 +65,135 @@ class MyComponent extends Component {
           </div>
         </div>
 
-        {/* Product Slider */}
-        <div className="container">
-          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-            <Slider {...settings}>
-              {products.map((product, index) => (
-                <div key={index}>
-                  <div
-                    style={{
-                      backgroundColor: "#7B4F3B",
-                      color: "#fff",
-                      padding: "20px",
-                      borderRadius: "10px",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div>
-                      <h2 style={{ margin: 0 }}>{product.title}</h2>
-                      <p>{product.discount}</p>
-                    </div>
-                    <img
-                      src="https://tse2.mm.bing.net/th/id/OIP.9Izv-aszItToTtEqRMSE0QHaE6?pid=Api&P=0&h=180"
-                      alt={product.title}
-                      style={{
-                        width: "120px",
-                        height: "120px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
+        <div className="button-container">
+          <button className="action-btn">
+            <i className="fas fa-shopping-cart"></i> Shop Online
+          </button>
+          <button className="action-btn">
+            <i className="fas fa-file-signature"></i> Request A Quote
+          </button>
+          <button className="action-btn">
+            <i className="fas fa-warehouse"></i> Buy Wholesale
+          </button>
+        </div>
+
+        {/* slider section stat */}
+        <div className="container mt-4">
+          <div
+            id="autoSlider"
+            className="carousel slide shadow-lg rounded-4 overflow-hidden"
+            data-bs-ride="carousel"
+            data-bs-interval="1000" // ✅ 1 second per slide
+          >
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src="https://picsum.photos/id/1018/800/400"
+                  className="d-block w-100"
+                  alt="Slide 1"
+                  style={{ objectFit: "cover", height: "400px" }}
+                />
+              </div>
+
+              <div className="carousel-item">
+                <img
+                  src="https://picsum.photos/id/1025/800/400"
+                  className="d-block w-100"
+                  alt="Slide 2"
+                  style={{ objectFit: "cover", height: "400px" }}
+                />
+              </div>
+
+              <div className="carousel-item">
+                <img
+                  src="https://picsum.photos/id/1033/800/400"
+                  className="d-block w-100"
+                  alt="Slide 3"
+                  style={{ objectFit: "cover", height: "400px" }}
+                />
+              </div>
+            </div>
+
+            {/* ✅ Indicators */}
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#autoSlider"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#autoSlider"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#autoSlider"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+          </div>
+        </div>
+
+        {/* slider section end */}
+
+        {/* Product Section */}
+        <div className="container my-5">
+          <div className="row">
+            <div className="col-12 text-center">
+              <h6>Product Category</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+
+            <div
+              style={{ backgroundColor: "hsla(15, 100%, 87%, 1.00)" }}
+              className="row-custom"
+            >
+              {products.map((product, i) => (
+                <div key={i} className=" pd-5 col-5-custom text-center  pd-5">
+                  <img
+                    src={product.icon}
+                    alt={product.name}
+                    className="img-fluid"
+                  />
+                  <h5>{product.name}</h5>
+                  <p>{product.discount}</p>
                 </div>
               ))}
-            </Slider>
+            </div>
+          </div>
+        </div>
+
+        <div className="container my-5">
+          <div className="row">
+            <div className="col-12 text-center">
+              <h6>Introducing Our Products</h6>
+            </div>
+            <div className="row">
+              <div className="col-12 text-center">
+                <ul
+                  style={{
+                    width: "500px",
+                    margin: "0 auto", // ✅ centers the ul
+                    gap: "65px", // ✅ space between li items
+                  }}
+                  className="d-flex justify-content-center mt-2 text-decoration-none uls"
+                >
+                  <li className="text-dark">Home</li>
+                  <li className="text-dark">Home</li>
+                  <li>
+                    {" "}
+                    <li className="text-dark">Home</li>
+                  </li>
+                  <li className="text-dark">Home</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </>
