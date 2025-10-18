@@ -184,7 +184,11 @@ class MyComponent extends Component {
                   }}
                   className="d-flex justify-content-center mt-2 text-decoration-none uls"
                 >
-                  <li className="text-dark">Home</li>
+                  <li className="text-dark">
+                    <a href="/" className="text-dark text-decoration-none">
+                      Home
+                    </a>
+                  </li>
                   <li className="text-dark">Home</li>
                   <li>
                     {" "}
