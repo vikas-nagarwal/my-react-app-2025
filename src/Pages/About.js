@@ -4,6 +4,39 @@ import "../App.css";
 import Product from "../Components/product";
 import { appName, version, greet } from "./globals"; // from globals.js
 
+if (true) {
+  let country = "pakistan";
+  console.log(country);
+}
+// Inside Block vs Outside Block
+let color = "red";
+if (true) {
+  let color = "blue";
+  console.log(color);
+}
+
+console.log(color);
+
+// array
+let color2 = ["red", "green", "blue"];
+console.log(color2[0]);
+console.log(color2[1]);
+console.log(color2[2]);
+
+// Reassign String
+let greeting = "Hi";
+greeting = greeting + " there!";
+console.log(greeting); // Hi there!
+
+let fruits = ["Apple", "Mango"];
+console.log(fruits[0]);
+console.log(fruits[1]);
+
+// 🔹 13. Array Modify
+let fruitsH = ["Apple", "Mango"];
+fruitsH.push("Banana");
+console.log(fruitsH); // Banana
+
 function bye() {
   return "Thanks for visiting " + appName;
 }
@@ -17,6 +50,9 @@ function myFunction() {
   return "Thanks " + rrahul;
 }
 
+let user = { name: "Vikas", age: 24 };
+console.log(user);
+
 const vika = "vikasnagarwa";
 function myFunction1() {
   return "Thanks " + vika + " from " + appName;
@@ -25,6 +61,8 @@ console.log(myFunction1());
 // gloal scope end
 
 // block scop
+
+ss
 
 {
   let blockVar = "I am block scoped";

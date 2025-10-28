@@ -2,7 +2,7 @@ import React, { useState, Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../App.css";
-import signupImage from "../image/singup.jpg";
+// import signupImage from "../image/singup.jpg";
 
 function Signup() {
   // 🟢 Step 1: Form data and error state

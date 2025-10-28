@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import loginImage from "../image/login.jpeg";
+// import loginImage from "../image/login.jpeg";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Login() {
