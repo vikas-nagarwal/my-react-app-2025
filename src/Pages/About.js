@@ -7,10 +7,10 @@ import Product from "../Components/product";
 // return `${newSkill} added successfully to ${this.name}!`;
 
 let fruits1 = ["Apple", "Banana", "Mango"];
-
 function Vikas() {
   return "Fruits after delete: " + fruits1; // simply return full array
 }
+
 delete fruits1[0]; // removes "Banana"
 delete fruits1[2]; // removes "Mango"
 console.log(Vikas());
