@@ -1,97 +1,290 @@
 import React from "react";
-import Api from "../APi/Api";
 import "../App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { appName, version, greet } from "./globals";
 import Product from "../Components/product";
-import { appName, version, greet } from "./globals"; // from globals.js
 
-if (true) {
-  let country = "pakistan";
-  console.log(country);
+// return `${newSkill} added successfully to ${this.name}!`;
+
+let fruits1 = ["Apple", "Banana", "Mango"];
+
+function Vikas() {
+  return "Fruits after delete: " + fruits1; // simply return full array
 }
-// Inside Block vs Outside Block
-let color = "red";
-if (true) {
-  let color = "blue";
-  console.log(color);
+delete fruits1[0]; // removes "Banana"
+delete fruits1[2]; // removes "Mango"
+console.log(Vikas());
+
+let gfff = ["Apple", "Banana", "Mango"];
+gfff.pop();
+console.log(gfff); // ["Apple", "Banana"]
+
+let fruitrrs = ["Apple", "Banana", "Mango"];
+console.log(fruitrrs.join(" - ")); // "Apple - Banana - Mango"
+
+let fruiftsd = ["Apple", "Banana", "Mango"];
+console.log(fruiftsd.at(0)); // "Apple"
+console.log(fruiftsd.at(-1)); // "Mango" (last item)
+
+let fruitsd = ["Apple", "Banana", "Mango"];
+console.log(fruitsd.toString()); // "Apple,Banana,Mango"
+
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits.length); // Output: 3
+
+let school = ["Math", "Science", "History", "Geography"];
+console.log(school.length); // Output: 4
+
+// Step 1: Create array of students
+let students = [
+  {
+    name: "Vikas",
+    age: 24,
+    skills: ["HTML", "CSS", "JavaScript"],
+    id: 101,
+    // method 1: show details
+    getDetails() {
+      return `${this.name} is ${
+        this.age
+      } years old and knows ${this.skills.join(", ")}.`;
+    },
+
+    // method 2: add new skill
+    addSkill(newSkill) {
+      this.skills.push(newSkill);
+      return `${newSkill} added successfully to ${this.name}!`;
+    },
+  },
+
+  {
+    name: "Amit",
+    age: 22,
+    skills: ["Python", "Django"],
+    id: 102,
+
+    getDetails() {
+      return `${this.name} is ${
+        this.age
+      } years old and knows ${this.skills.join(", ")}.`;
+    },
+
+    addSkill(newSkill) {
+      this.skills.push(newSkill);
+      return `${newSkill} added successfully to ${this.name}!`;
+    },
+  },
+
+  {
+    name: "Neha",
+    age: 25,
+    skills: ["C++", "Java"],
+    id: 103,
+
+    getDetails() {
+      return `${this.name} is ${
+        this.age
+      } years old and knows ${this.skills.join(", ")}.`;
+    },
+
+    addSkill(newSkill) {
+      this.skills.push(newSkill);
+      return `${newSkill} added successfully to ${this.name}!`;
+    },
+  },
+];
+
+// Step 2: Loop through all students and show details
+students.forEach((student) => {
+  console.log(student.getDetails());
+});
+
+// Step 3 (Bonus 🌟): Add a new skill to Vikas
+console.log(students[0].addSkill("React"));
+
+// Step 4: Show updated details of Vikas
+console.log(students[0].getDetails());
+// end
+
+// task2
+const studentdata = {
+  name: "Vikas",
+  age: 24,
+  skills: ["HTML", "CSS", "JavaScript", "React"],
+  id: 101,
+  getDetails() {
+    return `${this.name} is ${this.age} years old and knows ${this.skills.join(
+      ", "
+    )}.`;
+  },
+};
+
+console.log(studentdata.getDetails());
+let vikas3 = {
+  age: 24,
+  id: 101,
+  name: "Vikas",
+};
+
+console.log(vikas3.name);
+let vikas2 = {
+  a: 10,
+  b: 23,
+  c: 40,
+  vikas() {
+    let sum = this.a + this.b + this.c;
+    let Results = sum * this.c;
+    let Results2 = Results / this.b;
+    if (Results2 > 50) {
+      return Results2;
+    }
+  },
+};
+
+console.log(vikas2.vikas());
+const cars = {
+  brand: "Ford",
+  model: "Mustang",
+  year: 1969,
+  info() {
+    return `${this.brand} ${this.model} (${this.year})`;
+  },
+};
+
+delete cars.model;
+delete cars.year;
+console.log(cars.info());
+
+const company = {
+  name: "Tech Solutions",
+  location: "New York",
+  yearFounded: 2010,
+  getDetails() {
+    return `${this.name}, located in ${this.location}, was founded in ${this.yearFounded}.`;
+  },
+};
+
+console.log(company.location); // ✅ Access the property (not a function)
+console.log(company.getDetails()); // ✅ Call the method (function)
+
+let student = {
+  name: "Vikas",
+  age: 24,
+  id: 101,
+  getDetails() {
+    return {
+      name: this.name,
+      age: this.age,
+      id: this.id,
+    };
+  },
+};
+
+console.log(student.name); // Output: Vikas
+console.log(student.getDetails()); // Output: { name: 'Vikas', age: 24, id: 101 }
+
+// 🔹 Object function
+function Data() {
+  return {
+    name: "Vikas",
+    age: 24,
+    id: 101,
+  };
 }
 
-console.log(color);
+// 🔹 Object with method
+const carss = {
+  brand: "Ford",
+  model: "Mustang",
+  year: 1969,
+  info() {
+    return `${this.brand} ${this.model} (${this.year})`;
+  },
+};
 
-// array
-let color2 = ["red", "green", "blue"];
-console.log(color2[0]);
-console.log(color2[1]);
-console.log(color2[2]);
+console.log(carss.info()); // ✅ सही तरीका
 
-// Reassign String
-let greeting = "Hi";
-greeting = greeting + " there!";
-console.log(greeting); // Hi there!
+// 🔹 Class
+class Car {
+  constructor(name, age, id) {
+    this.name = name;
+    this.age = age;
+    this.id = id;
+  }
+}
 
-let fruits = ["Apple", "Mango"];
-console.log(fruits[0]);
-console.log(fruits[1]);
+// 🔹 Simple functions
+function SumResult() {
+  return 10 + 20 + 40;
+}
+function MultiResult() {
+  return 10 * 20 * 25;
+}
+function DivisionResult() {
+  return 100 / 20;
+}
 
-// 🔹 13. Array Modify
-let fruitsH = ["Apple", "Mango"];
-fruitsH.push("Banana");
-console.log(fruitsH); // Banana
-
+// 🔹 Global helpers
 function bye() {
   return "Thanks for visiting " + appName;
 }
-const Header = () => <h1>{appName}</h1>; // directly using imported global
+const Header = () => <h1>{appName}</h1>;
 const Footer = () => <footer>{appName}</footer>;
 
-// global scope
-let rrahul = "Rahul";
-function myFunction() {
-  console.log("Hello " + rrahul + " from " + appName);
-  return "Thanks " + rrahul;
-}
-
-let user = { name: "Vikas", age: 24 };
-console.log(user);
-
-const vika = "vikasnagarwa";
-function myFunction1() {
-  return "Thanks " + vika + " from " + appName;
-}
-console.log(myFunction1());
-// gloal scope end
-
-// block scop
-
-ss
-
-{
-  let blockVar = "I am block scoped";
-  const anotherBlockVar = "Me too!";
-  console.log(blockVar); // ✅ Console me dikh raha hai
-  console.log(anotherBlockVar); // ✅ Console me dikh raha hai
-  // Return me show karne ke liye ek variable bana lete hain
-  var output = blockVar + " & " + anotherBlockVar;
-}
-
-// block scop end
-
 const About = () => {
-  return (
-    <div>
-      <div>
-        <h1>{appName}</h1> {/* from globals.js */}
-        <h2>{version}</h2>
-        <h3>{greet()}</h3>
-      </div>
-      <div>
-        <h2>{myFunction1()}</h2>
-        <h2>{myFunction()}</h2>
-      </div>
+  const mam = Data();
+  const sum = SumResult();
+  const multi = MultiResult();
+  const divi = DivisionResult();
+  const myCar = new Car("Rahul", 20, 25);
 
-      <h2>{Header()}</h2>
-      <h2>{Footer()}</h2>
-      <h2>{bye()}</h2>
-      <h2>{greet()}</h2>
+  return (
+    <div className="container py-5 text-center">
+      {/* 🔸 Student Section */}
+      <section className="mb-5">
+        <h2>Student Info</h2>
+        <p>
+          <b>Name:</b> {mam.name}
+        </p>
+        <p>
+          <b>Age:</b> {mam.age}
+        </p>
+        <p>
+          <b>ID:</b> {mam.id}
+        </p>
+      </section>
+
+      {/* 🔸 Class Object Section */}
+      <section className="mb-5">
+        <h2>Car (Class Object)</h2>
+        <p>
+          <b>Name:</b> {myCar.name}
+        </p>
+        <p>
+          <b>Age:</b> {myCar.age}
+        </p>
+        <p>
+          <b>ID:</b> {myCar.id}
+        </p>
+      </section>
+
+      {/* 🔸 Math Results */}
+      <section className="mb-5">
+        <h2>Results</h2>
+        <p>Sum: {sum}</p>
+        <p>Multiplication: {multi}</p>
+        <p>Division: {divi}</p>
+      </section>
+
+      {/* 🔸 Global info */}
+      <section className="mb-5">
+        <h2>{appName}</h2>
+        <h4>Version: {version}</h4>
+        <h5>{greet()}</h5>
+        <h5>{bye()}</h5>
+      </section>
+
+      <Header />
+      {/* <Footer /> */}
       <Product />
     </div>
   );
