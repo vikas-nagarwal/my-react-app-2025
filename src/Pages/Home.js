@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function student5(age) {
   let name4 = "ajay";
   let name5 = "vikas";
-
   let is_voter = "";
   if (age >= 18) {
     is_voter = "YES";
@@ -16,7 +15,6 @@ function student5(age) {
 }
 const dataName = student5(14);
 const dataName2 = student5(18);
-
 class Home extends Component {
   render() {
     const products = [
