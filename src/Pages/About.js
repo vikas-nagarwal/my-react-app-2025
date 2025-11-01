@@ -4,7 +4,56 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { appName, version, greet } from "./globals";
 import Product from "../Components/product";
 
-// return `${newSkill} added successfully to ${this.name}!`;
+const studentdata = {
+  name: "Vikas",
+  age: 24,
+  skills: ["HTML", "CSS", "JavaScript", "React"],
+  id: 101,
+  getDetails() {
+    return `${this.name} is ${this.age} years old and knows ${this.skills.join(
+      ", "
+    )}.`;
+  },
+};
+
+console.log(studentdata.getDetails());
+let stuendtsssss = {
+  age2: 10,
+  nameg: "gdfdf",
+  age: 20,
+  collage: "ssmd",
+  colage() {
+    return `${this.age2}, ${this.nameg}, ${this.age}, ${this.collage}`;
+  },
+};
+console.log(stuendtsssss.colage());
+
+function hement() {
+  let name = "rahul";
+  let namte = "raj";
+  let agee = 20;
+  console.log(name);
+  console.log(namte);
+  console.log(agee);
+}
+hement();
+
+// var
+var age = 24;
+var name1 = "Viddkashh";
+var name = "Vikashh";
+var name = "Visskashh";
+
+var isStudent = true;
+console.log(name);
+console.log(name);
+
+console.log(name1);
+// var end
+function Vikas1() {
+  console.log(name);
+}
+Vikas1();
 
 let fruits1 = ["Apple", "Banana", "Mango"];
 function Vikas() {
@@ -106,19 +155,7 @@ console.log(students[0].getDetails());
 // end
 
 // task2
-const studentdata = {
-  name: "Vikas",
-  age: 24,
-  skills: ["HTML", "CSS", "JavaScript", "React"],
-  id: 101,
-  getDetails() {
-    return `${this.name} is ${this.age} years old and knows ${this.skills.join(
-      ", "
-    )}.`;
-  },
-};
 
-console.log(studentdata.getDetails());
 let vikas3 = {
   age: 24,
   id: 101,
@@ -238,55 +275,58 @@ const About = () => {
   const myCar = new Car("Rahul", 20, 25);
 
   return (
-    <div className="container py-5 text-center">
-      {/* 🔸 Student Section */}
-      <section className="mb-5">
-        <h2>Student Info</h2>
-        <p>
-          <b>Name:</b> {mam.name}
-        </p>
-        <p>
-          <b>Age:</b> {mam.age}
-        </p>
-        <p>
-          <b>ID:</b> {mam.id}
-        </p>
-      </section>
+    <>
+      <div className="container"></div>
+      <div className="container py-5 text-center">
+        {/* 🔸 Student Section */}
+        <section className="mb-5">
+          <h2>Student Info</h2>
+          <p>
+            <b>Name:</b> {mam.name}
+          </p>
+          <p>
+            <b>Age:</b> {mam.age}
+          </p>
+          <p>
+            <b>ID:</b> {mam.id}
+          </p>
+        </section>
 
-      {/* 🔸 Class Object Section */}
-      <section className="mb-5">
-        <h2>Car (Class Object)</h2>
-        <p>
-          <b>Name:</b> {myCar.name}
-        </p>
-        <p>
-          <b>Age:</b> {myCar.age}
-        </p>
-        <p>
-          <b>ID:</b> {myCar.id}
-        </p>
-      </section>
+        {/* 🔸 Class Object Section */}
+        <section className="mb-5">
+          <h2>Car (Class Object)</h2>
+          <p>
+            <b>Name:</b> {myCar.name}
+          </p>
+          <p>
+            <b>Age:</b> {myCar.age}
+          </p>
+          <p>
+            <b>ID:</b> {myCar.id}
+          </p>
+        </section>
 
-      {/* 🔸 Math Results */}
-      <section className="mb-5">
-        <h2>Results</h2>
-        <p>Sum: {sum}</p>
-        <p>Multiplication: {multi}</p>
-        <p>Division: {divi}</p>
-      </section>
+        {/* 🔸 Math Results */}
+        <section className="mb-5">
+          <h2>Results</h2>
+          <p>Sum: {sum}</p>
+          <p>Multiplication: {multi}</p>
+          <p>Division: {divi}</p>
+        </section>
 
-      {/* 🔸 Global info */}
-      <section className="mb-5">
-        <h2>{appName}</h2>
-        <h4>Version: {version}</h4>
-        <h5>{greet()}</h5>
-        <h5>{bye()}</h5>
-      </section>
+        {/* 🔸 Global info */}
+        <section className="mb-5">
+          <h2>{appName}</h2>
+          <h4>Version: {version}</h4>
+          <h5>{greet()}</h5>
+          <h5>{bye()}</h5>
+        </section>
 
-      <Header />
-      {/* <Footer /> */}
-      <Product />
-    </div>
+        <Header />
+        {/* <Footer /> */}
+        <Product />
+      </div>
+    </>
   );
 };
 

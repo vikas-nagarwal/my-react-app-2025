@@ -2,6 +2,21 @@ import React, { Component } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+function student5(age) {
+  let name4 = "ajay";
+  let name5 = "vikas";
+
+  let is_voter = "";
+  if (age >= 18) {
+    is_voter = "YES";
+  } else {
+    is_voter = "NO";
+  }
+  return { name4, name5, age, is_voter };
+}
+const dataName = student5(14);
+const dataName2 = student5(18);
+
 class Home extends Component {
   render() {
     const products = [
@@ -14,6 +29,22 @@ class Home extends Component {
 
     return (
       <>
+        <div className="container">
+          <h2>student info</h2>
+          <p>name 1:{dataName.name4}</p>
+          <p>name 2:{dataName.name5}</p>
+          <p>Age:{dataName.age}</p>
+          <p>Voteting: {dataName.is_voter}</p>
+        </div>
+
+        <div className="container">
+          <h2>student info</h2>
+          <p>name 1:{dataName2.name4}</p>
+          <p>name 2:{dataName2.name5}</p>
+          <p>Age:{dataName2.age}</p>
+          <p>Voteting: {dataName2.is_voter}</p>
+        </div>
+
         <div className="container py-2 bgcolor">
           <div className="row align-items-center">
             <div className="col-12 col-md-6 mb-2 mb-md-0">
