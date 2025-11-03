@@ -13,6 +13,7 @@ function student5(age) {
   }
   return { name4, name5, age, is_voter };
 }
+
 const dataName = student5(14);
 const dataName2 = student5(18);
 class Home extends Component {
