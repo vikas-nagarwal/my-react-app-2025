@@ -22,6 +22,9 @@ function Header() {
         <li>
           <Link to="/Signup">Signup</Link>
         </li>{" "}
+        <li>
+          <Link to="/Practise">Prictise</Link>
+        </li>{" "}
       </ul>
     </div>
   );

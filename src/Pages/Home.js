@@ -15,7 +15,7 @@ function tahu() {
 }
 
 const result = tahu();
-console.log(result.addition);
+console.log(result.division);
 
 function contactnumber() {
   const rahul = 8952995446;

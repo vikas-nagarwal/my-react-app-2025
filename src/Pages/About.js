@@ -17,6 +17,7 @@ const studentdata = {
 };
 
 console.log(studentdata.getDetails());
+
 let stuendtsssss = {
   age2: 10,
   nameg: "gdfdf",

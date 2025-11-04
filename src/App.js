@@ -8,7 +8,7 @@ import Header from "./Components/Header.js";
 import Login from "./Pages/Login.js";
 import Signup from "./Pages/Signup";
 import { User, Data } from "./Pages/Render";
-
+import Practise from "./Pages/Practise.js";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/user" element={<User />} />
         <Route path="/data" element={<Data />} />
+        <Route path="/practise" element={<Practise />} />
       </Routes>
       <Footer />
     </BrowserRouter>
