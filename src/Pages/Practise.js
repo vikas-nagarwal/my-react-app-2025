@@ -1,56 +1,50 @@
 import React from "react";
 
-const studentdata = {
-  name: 12,
-  id: 25,
-  school: 0,
-
-  // 👇 method defined
-  activity() {
-    if (this.name > this.id) {
-      return "Name is greater than ID";
-    } else if (this.id > this.name) {
-      return "ID is greater than Name";
-    } else {
-      return "Both are equal";
-    }
-  },
-};
-
-// ✅ 2-number multiplication object
-const data = {
-  a: 6,
-  b: 20,
-  dataclear() {
-    return this.a * this.b; // return the multiplied value
-  },
-};
-
 function Practise() {
-  // 👇 call both functions
-  const result = studentdata.activity();
-  const multiplyResult = data.dataclear();
+  // पहले वाला calculator function
+  const calculate = (value1 = 0, value2 = 0, op = "+") => {
+    switch (op) {
+      case "+":
+        return value1 + value2;
+      case "-":
+        return value1 - value2;
+      case "*":
+        return value1 * value2;
+      case "/":
+        return value2 !== 0 ? value1 / value2 : "Cannot divide by zero";
+      default:
+        return "Invalid operator";
+    }
+  };
 
-  console.log("Student Result:", result);
-  console.log("Multiplication Result:", multiplyResult);
+  // 🧮 नया function: sum of digits निकालने के लिए
+  const sumOfDigits = (num = 0) => {
+    return num
+      .toString()
+      .split("")
+      .reduce((acc, curr) => acc + parseInt(curr), 0);
+  };
+
+  // Calculation examples
+  const results = calculate(1000, 20, "*");
+  const totalDigits = sumOfDigits(98765); // Example
 
   return (
     <>
-      {/* --- Student Data Section --- */}
       <div style={{ textAlign: "center", marginTop: "40px" }}>
-        <h2>Student Data</h2>
-        <h3>Result: {result}</h3>
-        <h3>Name: {studentdata.name}</h3>
-        <h3>ID: {studentdata.id}</h3>
-        <h3>School: {studentdata.school}</h3>
-      </div>
+        <h2>📊 Database Operator Results</h2>
+        <p>Add : {calculate(1000, 20, "+")} </p>
+        <p>Sub : {calculate(1000, 20, "-")} </p>
+        <p>Div : {calculate(1000, 20, "/")} </p>
+        <p>Mul : {calculate(1000, 20, "*")} </p>
 
-      {/* --- Multiplication Section --- */}
-      <div style={{ textAlign: "center", marginTop: "40px" }}>
-        <h2>Multiplication Data</h2>
-        <h3>Value of A: {data.a}</h3>
-        <h3>Value of B: {data.b}</h3>
-        <h1>Multiplication Result: {multiplyResult}</h1>
+        <hr />
+        <h3>🔢 Sum of Digits Function</h3>
+        <p>Number: 98765 → Total: {totalDigits}</p>
+
+        <a className="btn btn-primary" href="#" role="button">
+          Button
+        </a>
       </div>
     </>
   );
