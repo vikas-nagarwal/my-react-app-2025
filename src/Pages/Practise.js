@@ -1,53 +1,31 @@
+import { data } from "@remix-run/router";
+import { ResultType } from "@remix-run/router/dist/utils";
 import React from "react";
 
 function Practise() {
-  // पहले वाला calculator function
-  const calculate = (value1 = 0, value2 = 0, op = "+") => {
-    switch (op) {
-      case "+":
-        return value1 + value2;
-      case "-":
-        return value1 - value2;
-      case "*":
-        return value1 * value2;
-      case "/":
-        return value2 !== 0 ? value1 / value2 : "Cannot divide by zero";
-      default:
-        return "Invalid operator";
-    }
+  const ajaysharam = {
+    a: 50,
+    b: 55,
+    c: 40,
+    d: 49,
+
+    calc() {
+      if (this.a > this.b && this.a > this.c && this.a > this.d) {
+        return this.a; // a की value
+      } else if (this.b > this.a && this.b > this.c && this.b > this.d) {
+        return this.b; // b की value
+      } else if (this.c > this.a && this.c > this.b && this.c > this.d) {
+        return this.c; // c की value
+      } else {
+        return this.d; // d की value
+      }
+    },
   };
 
-  // 🧮 नया function: sum of digits निकालने के लिए
-  const sumOfDigits = (num = 0) => {
-    return num
-      .toString()
-      .split("")
-      .reduce((acc, curr) => acc + parseInt(curr), 0);
-  };
+  console.log(ajaysharam.calc());
 
-  // Calculation examples
-  const results = calculate(1000, 20, "*");
-  const totalDigits = sumOfDigits(98765); // Example
-
-  return (
-    <>
-      <div style={{ textAlign: "center", marginTop: "40px" }}>
-        <h2>📊 Database Operator Results</h2>
-        <p>Add : {calculate(1000, 20, "+")} </p>
-        <p>Sub : {calculate(1000, 20, "-")} </p>
-        <p>Div : {calculate(1000, 20, "/")} </p>
-        <p>Mul : {calculate(1000, 20, "*")} </p>
-
-        <hr />
-        <h3>🔢 Sum of Digits Function</h3>
-        <p>Number: 98765 → Total: {totalDigits}</p>
-
-        <a className="btn btn-primary" href="#" role="button">
-          Button
-        </a>
-      </div>
-    </>
-  );
+  return <></>;
 }
-
+const result (ajaysharam.calc);
 export default Practise;
+
